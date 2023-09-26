@@ -61,15 +61,11 @@ app.put('/books/:id', (req, res) => {
 });
 
 app.delete('/books/:id', (req, res) => {
-    db.run(`DELETE FROM Book WHERE id = ?`, req.params.id, function(err) {
+    db.run('DELETE FROM books WHERE id = ?', req.params.id, function(err) {
         if (err) {
             res.status(500).send(err);
-        }
-        else if (this.changes === 0) {
-            res.status(404).send('Book Not Found');
-        } 
-        else {
-            res.send('Book is deleted');
+        } else {
+            res.send({});
         }
     });
 });
