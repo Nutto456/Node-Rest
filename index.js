@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 mongoose.connect(
-    'mongodb://admin:IDKxqf89775@10.104.12.254:27017', 
+    'mongodb://admin:IDKxqf89775@node50115-env-7377511.proen.app.ruk-com.cloud:11552', 
     { 
         useNewUrlParser: true, 
         useUnifiedTopology: true 
@@ -68,5 +68,5 @@ app.delete('/books/:id', async (req, res) => {
     }
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Listening on port http://localhost:${port}`));
